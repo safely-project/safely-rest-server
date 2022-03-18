@@ -4,9 +4,9 @@ import {
   PublicKey,
   SystemProgram,
   Transaction,
-} from "@solana/web3.js";
+} from "@safecoin/web3.js";
 import BufferLayout from "buffer-layout";
-import { TokenInstructions } from "@project-serum/serum";
+import { TokenInstructions } from "@safely-project/serum";
 import BN from "bn.js";
 
 export const ACCOUNT_LAYOUT = BufferLayout.struct([

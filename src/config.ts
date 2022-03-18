@@ -20,4 +20,4 @@ export const DEFAULT_TIMEOUT = 15000;
 export const BLOCKHASH_CACHE_TIME = 30;
 export const NUM_CONNECTIONS = 1;
 export const SOLANA_URL =
-  process.env.SOLANA_URL || "https://solana-api.projectserum.com";
+  process.env.SOLANA_URL || "https://api.devnet.safecoin.org";

@@ -1,8 +1,8 @@
-import { Account, Blockhash, Connection, Transaction } from "@solana/web3.js";
+import { Account, Blockhash, Connection, Transaction } from "@safecoin/web3.js";
 import fetch, { Response } from "node-fetch";
 import jayson from "jayson/lib/client/browser";
 import { sleep } from "../utils";
-import { struct } from "superstruct";
+import * as ss from "superstruct";
 
 export async function signAndSerializeTransaction(
   connection: Connection,
@@ -18,14 +18,14 @@ export async function signAndSerializeTransaction(
 export type RpcRequest = (methodName: string, args: Array<any>) => any;
 
 function jsonRpcResult(resultDescription: any) {
-  const jsonRpcVersion = struct.literal("2.0");
-  return struct.union([
-    struct({
+  const jsonRpcVersion = ss.literal("2.0");
+  return ss.union([
+    ss.define({
       jsonrpc: jsonRpcVersion,
       id: "string",
       error: "any",
     }),
-    struct({
+    ss.define({
       jsonrpc: jsonRpcVersion,
       id: "string",
       error: "null?",

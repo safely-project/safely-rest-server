@@ -1,6 +1,6 @@
-import { PublicKey } from "@solana/web3.js";
+import { PublicKey } from "@safecoin/web3.js";
 import BN from "bn.js";
-import { Order as SerumOrder } from "@project-serum/serum/lib/market";
+import { Order as SerumOrder } from "@safely-project/serum/lib/market";
 
 export type Coin = string;
 export type Exchange = string;

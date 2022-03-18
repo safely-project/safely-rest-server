@@ -4,11 +4,11 @@ import {
   Blockhash,
   Connection,
   Context,
-  LAMPORTS_PER_SOL,
+  LAMPORTS_PER_SAFE,
   PublicKey,
   RpcResponseAndContext,
   Transaction,
-} from "@solana/web3.js";
+} from "@safecoin/web3.js";
 import {
   Coin,
   Dir,
@@ -42,8 +42,8 @@ import {
   OpenOrders,
   Orderbook,
   TokenInstructions,
-} from "@project-serum/serum";
-import { Order as SerumOrder } from "@project-serum/serum/lib/market";
+} from "@safely-project/serum";
+import { Order as SerumOrder } from "@safely-project/serum/lib/market";
 import { Buffer } from "buffer";
 import BN from "bn.js";
 import {
@@ -52,7 +52,7 @@ import {
   parseMintData,
   parseTokenAccountData,
 } from "./utils";
-import { OrderParams } from "@project-serum/serum/lib/market";
+import { OrderParams } from "@safely-project/serum/lib/market";
 import { BLOCKHASH_CACHE_TIME, DEFAULT_TIMEOUT } from "../config";
 import {
   createRpcRequest,
@@ -60,7 +60,7 @@ import {
   RpcRequest,
   signAndSerializeTransaction,
 } from "./solana";
-import { WRAPPED_SOL_MINT } from "@project-serum/serum/lib/token-instructions";
+import { WRAPPED_SOL_MINT } from "@safely-project/serum/lib/token-instructions";
 import { parse as urlParse } from "url";
 import bs58 from "bs58";
 
@@ -1142,7 +1142,7 @@ export class SerumApi {
           continue;
         }
         if (coin === "SOL") {
-          total += (accountValue.lamports ?? 0) / LAMPORTS_PER_SOL;
+          total += (accountValue.lamports ?? 0) / LAMPORTS_PER_SAFE;
           free += total;
         } else {
           const parsedAccount = parseTokenAccountData(accountValue.data);

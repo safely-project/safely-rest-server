@@ -1,7 +1,7 @@
-import { getLayoutVersion, MARKETS, TOKEN_MINTS } from "@project-serum/serum";
+import { getLayoutVersion, MARKETS, TOKEN_MINTS } from "@safely-project/serum";
 import { HARD_CODED_MINTS } from "../config";
 import { Pair } from "./types";
-import { PublicKey } from "@solana/web3.js";
+import { PublicKey } from "@safecoin/web3.js";
 
 export const MARKET_PARAMS = MARKETS.filter(
   (marketInfo) => !marketInfo.deprecated

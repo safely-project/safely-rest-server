@@ -1,5 +1,5 @@
 const lib = require('./lib/index');
-const solana = require('@solana/web3.js');
-const serum = require('@project-serum/serum');
+const solana = require('@safecoin/web3.js');
+const serum = require('@safely-project/serum');
 
 const SerumApi = lib.exchange.SerumApi;
